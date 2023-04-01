@@ -9,9 +9,9 @@ import (
 
 func ApiRequest() {
 	route := mux.NewRouter()
-	route.HandleFunc("/emp/{id}", handle.Homepage).Methods("GET").Host("localhost").Schemes("http")
-	// route.HandleFunc("/employees", getAllEmployees)
-	// route.HandleFunc("/employee", createEmployee).Methods("POST")
+	route.HandleFunc("/", handle.Homepage).Methods("GET").Host("localhost").Schemes("http")
+	route.HandleFunc("/employees", handle.AllemployeesDetails).Methods("GET").Host("localhost").Schemes("http")
+	route.HandleFunc("/employees/{id}", handle.EmployeesDetails).Methods("GET").Host("localhost").Schemes("http")
 	// route.HandleFunc("/employee/{id}", deleteEmployee).Methods("DELETE")
 	// route.HandleFunc("/employee/{id}", getEmployee)
 	log.Fatal(http.ListenAndServe(":4000", route))

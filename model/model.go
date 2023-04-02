@@ -1,9 +1,9 @@
 package model
 
 
-type Employees struct {
-	Employees []Employee
-}
+
+var	Employees []Employee
+
 
 type Employee struct {
 	Id   string `json:"id,omitempty"`

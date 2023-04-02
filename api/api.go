@@ -12,7 +12,7 @@ func ApiRequest() {
 	route.HandleFunc("/", handle.Homepage).Methods("GET").Host("localhost").Schemes("http")
 	route.HandleFunc("/employees", handle.AllemployeesDetails).Methods("GET").Host("localhost").Schemes("http")
 	route.HandleFunc("/employees/{id}", handle.EmployeesDetails).Methods("GET").Host("localhost").Schemes("http")
-	// route.HandleFunc("/employee/{id}", deleteEmployee).Methods("DELETE")
+	route.HandleFunc("/employee", handle.CreateEmployee).Methods("POST").Host("localhost").Schemes("http")
 	// route.HandleFunc("/employee/{id}", getEmployee)
 	log.Fatal(http.ListenAndServe(":4000", route))
 }
